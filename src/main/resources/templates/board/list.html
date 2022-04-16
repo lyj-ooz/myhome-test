@@ -25,6 +25,25 @@
 
         <main class="container">
             <h2>게시판✍️</h2>
+            <div>총 건수: <span th:text="${#lists.size(boards)}"></span></div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">글번호</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">작성자</th>
+                        <!-- <th scope="col">Handle</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="board : ${boards}">
+                        <th scope="row" th:text="${board.id}">1</th>
+                        <td th:text="${board.title}">Mark</td>
+                        <td>헤헤</td>
+                        <!-- <td>@mdo</td> -->
+                    </tr>
+                </tbody>
+            </table>
         </main>
 
         <!-- Optional JavaScript; choose one of the two! -->
